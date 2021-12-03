@@ -1,11 +1,14 @@
-def coffee_machine(beverage, sugar, stick)
-  if beverage == 'tea'
-    'T:1:0'
-  elsif beverage == 'chocolate'
-    'H::'
-  elsif beverage == 'coffee'
-    'C:2:0'
-  else
-    'M:message-content'
+class CoffeeMachine
+  def initialize(beverage, sugar, stick)
+    @beverage = beverage
+    @sugar = sugar
+    @stick = stick
+  end
+
+  def coffee_machine
+    return 'T:1:0' if @beverage == 'tea'
+    return 'H::' if @beverage == 'chocolate'
+    return 'C:2:0' if @beverage == 'coffee'
+    return 'M:message-content'
   end
 end
